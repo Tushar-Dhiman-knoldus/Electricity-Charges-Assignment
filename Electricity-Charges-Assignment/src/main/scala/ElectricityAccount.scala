@@ -11,16 +11,19 @@ case class ElectricityAccount(accountNumber: Int, username: String, Address: Str
       throw new IllegalArgumentException()
     }
     else if (units_consumed <= 250) {
-      val amount = units_consumed * 5.25
-      amount
+      val amount = (units_consumed * 5.25)
+      val gst_amount = amount + (amount * 18/100)
+      gst_amount
     }
     else if (units_consumed <= 450) {
       val amount = (250 * 5.25) + (units_consumed - 250) * 6.75
-      amount
+      val gst_amount = amount + (amount * 18/100)
+      gst_amount
     }
     else {
       val amount = (250 * 5.25) + (200 * 6.75) + (units_consumed - 450) * 8.50
-      amount
+      val gst_amount = amount + (amount * 18/100)
+      gst_amount
     }
   }
 }

@@ -11,17 +11,17 @@ class ElectricityAccountTest extends AnyFunSuite {
 
   test("calculateAmount() should return correct amount for units consumed between 0 and 250") {
     val account = ElectricityAccount(101, "Tushar", "Noida", 100, 200)
-    assert(account.calculateAmount() == 525.0)
+    assert(account.calculateAmount() == 619.5)
   }
 
   test("calculateAmount() should return correct amount for units consumed between 251 and 450") {
     val account = ElectricityAccount(101, "Tushar", "Noida", 200, 500)
-    assert(account.calculateAmount() == 1650.0)
+    assert(account.calculateAmount() == 1947.0)
   }
 
   test("calculateAmount() should return correct amount for units consumed above 450 ") {
     val account = ElectricityAccount(101, "Tushar", "Noida", 5062, 5904)
-    assert(account.calculateAmount() == 5994.5)
+    assert(account.calculateAmount() == 7073.51)
   }
 
   // Test case for handling the Exception.
@@ -31,5 +31,4 @@ class ElectricityAccountTest extends AnyFunSuite {
       account.calculateAmount()
     }
   }
-
 }
